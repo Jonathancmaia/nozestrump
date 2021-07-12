@@ -1,0 +1,65 @@
+.card {
+  background-color: #FFF;
+  padding: 5px;
+  margin: 5px;
+  transition: 0.3s; 
+}
+
+.card:hover, .foto {
+  opacity: 0.8;
+  transition: 0.3s; 
+}
+
+.desc {
+  font-size: 1.4rem;
+  font-weight: 100;
+}
+
+.preco {
+  font-size: 2.0rem;
+  color: black;
+  transition: 0.2s;
+  padding: 3%;
+}
+
+.preco:hover {
+  font-size: 2.0rem;
+  color: red;
+  transition: 0.2s;
+}
+
+.centavos {
+  font-size: 1.6rem !important;
+}
+
+h1 {
+  color: #fff;
+}
+
+.item-display {
+  height: 100%;
+  padding: 3%;
+}
+
+.apontador {
+  cursor: pointer;
+}
+
+.categories {
+  min-height: 6vh;
+  background-color: #474a51;
+  color: white;
+}
+
+.modalOpenedItem {
+  padding: 3%;
+}
+
+.photo-container {
+  width: 100%;
+  padding-top: 3%;
+}
+
+.tamanho{
+  padding: 3%;
+}

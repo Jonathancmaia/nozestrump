@@ -1,0 +1,9 @@
+.logue-se {
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.logue-se:hover {
+  color: red;
+  transition: 0.5s;
+}

@@ -1,0 +1,9 @@
+.cadastre-se {
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.cadastre-se:hover {
+  color: red;
+  transition: 0.5s;
+}

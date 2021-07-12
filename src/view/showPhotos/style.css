@@ -1,0 +1,22 @@
+.carousel{
+  overflow-x: hidden !important;
+}
+
+@media screen and (max-width: 767px) {
+  .carousel {
+    max-width: 35vh;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+  .carousel {
+    max-width: 25vh;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .carousel {
+    max-width: 30vh;
+  }
+}
+

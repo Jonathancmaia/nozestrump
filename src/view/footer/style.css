@@ -1,0 +1,15 @@
+.footer-container {
+  background-color: #3d3d3d;
+  color: white;
+}
+
+li{
+  list-style-type: circle;
+  transition: 0.4s;
+}
+
+li:hover {
+  list-style-type: circle;
+  color: red;
+  transition: 0.4s;
+}
