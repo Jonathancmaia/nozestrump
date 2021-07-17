@@ -62,9 +62,6 @@ export default function Header() {
       <Cart />
       <Auth opened = {opened} />
 
-      {(window.innerWidth < 577) ?
-        <></>
-        :
         <Navbar bg="dark" variant="dark" expand="md" className='navbar'>
           <Navbar.Brand className='logo'>
             <h3>
@@ -74,47 +71,46 @@ export default function Header() {
           <Navbar.Toggle aria-controls="navbar" />
           <Navbar.Collapse id="navbar" className="justify-content-end">
             <Nav>
-                <Nav.Link href='#'>
-                  {(me.LOADING) ?
-                    <div className="d-flex jultify-content-center">
-                      <Button variant="outline-secondary">
-                        <CircularProgress />
+              <Nav.Link href='#'>
+                {(me.LOADING) ?
+                  <div className="d-flex jultify-content-center">
+                    <Button variant="outline-secondary">
+                      <CircularProgress />
+                    </Button>
+                  </div>
+                  :
+                  <>{(me.NAME) ?
+                      <Usuario />                  
+                      :
+                      <Button
+                      variant="outline-secondary"
+                      className='loginButton'
+                      onClick={
+                        (e) => { 
+                          setOpened(true);
+                          setTimeout(()=>{setOpened()}, 3000);
+                        }
+                      }>
+                        <PersonIcon fontSize='default'/>
+                        Login
                       </Button>
-                    </div>
-                    :
-                    <>{(me.NAME) ?
-                        <Usuario />                  
-                        :
-                        <Button
-                        variant="outline-secondary"
-                        className='loginButton'
-                        onClick={
-                          (e) => { 
-                            setOpened(true);
-                            setTimeout(()=>{setOpened()}, 3000);
-                          }
-                        }>
-                          <PersonIcon fontSize='default'/>
-                          Login
-                        </Button>
-                      }
-                    </>
-                  }
-                </Nav.Link>
-
-                <Nav.Link href='#'>
-                  <Button variant="outline-secondary"
-                    onClick={(e)=>{
-                      dispatch( set_active(true) );
                     }
-                  }>
-                    <ShoppingCartIcon fontSize='default'/> Carrinho
-                  </Button>
-                </Nav.Link>
-              </Nav>
-          </Navbar.Collapse>
-        </Navbar>  
-        }
+                  </>
+                }
+              </Nav.Link>
+
+              <Nav.Link href='#'>
+                <Button variant="outline-secondary"
+                  onClick={(e)=>{
+                    dispatch( set_active(true) );
+                  }
+                }>
+                  <ShoppingCartIcon fontSize='default'/> Carrinho
+                </Button>
+              </Nav.Link>
+            </Nav>
+        </Navbar.Collapse>
+      </Navbar>  
     </>
   )
 }

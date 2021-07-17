@@ -12,7 +12,7 @@ export default function ShowPhotos(props){
   const photos = items.PHOTO[0].filter(item => item.id === props.id).map((filtered) => <Carousel.Item className='carousel'>
     <img
       className="d-block carousel"
-      src={'http://api-lojabim.test/'.concat([filtered.img])}
+      src={'http://nozestrump.com/api-lojabim.test'.concat([filtered.img])}
       alt="First slide"
     />
   </Carousel.Item>);
