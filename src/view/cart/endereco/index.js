@@ -33,6 +33,7 @@ export default function Endereco(props) {
   const [cep, setCep] = useState('');
   const [cidade, setCidade] = useState('');
   const [estado, setEstado] = useState('');
+  const [referencia, setReferencia] = useState('');
   const [sn, setSn] = useState(false);
   const [disableButton, setDisableButton] = useState(false);
 
@@ -72,6 +73,7 @@ export default function Endereco(props) {
     setCep(endereco.cep);
     setCidade(endereco.cidade);
     setEstado(endereco.estado);
+    setReferencia(endereco.referencia);
   },[endereco]);
 
   const handleClose = () => {
@@ -156,12 +158,11 @@ export default function Endereco(props) {
         //consulta o frete
 
         HttpAuth.post('frete', {
-          cep: endereco.cep,
-          tipo: tipoEnvio
+          cep: endereco.cep
         }).then(
           (response) => {
             if (response === undefined || response === '' || response === []){
-              //nada kk
+              console.log(response)
             } else {
               setSedex(response.data[0]);
               setPac(response.data[1]);
@@ -178,19 +179,22 @@ export default function Endereco(props) {
   function buscaEndereco (){
     HttpAuth.get('cliente/'+props.id+'/endereco').then(
       (response) => {
-        if (response.data !== undefined || response.data !== '' || response.data !== '[]') {
+        if (response.data.length > 0) {
 
           setQtdEndereco(response.data.length);
           
           setEndereco({
             rua: rua,
-            numero: response.data[qtdEndereco-1].numero,
-            complemento: response.data[qtdEndereco-1].complemento,
+            numero: response.data.numero[qtdEndereco-1],
+            complemento: response.data.complemento[qtdEndereco-1],
             bairro: bairro,
-            cep: response.data[qtdEndereco-1].cep,
+            cep: response.data.cep[qtdEndereco-1],
             cidade: cidade,
-            estado: estado
-          })
+            estado: estado,
+            referencia: response.data.referencia[qtdEndereco-1]
+          });
+        } else {
+          setCepLoading(false);
         }
       }
     );
@@ -225,6 +229,7 @@ export default function Endereco(props) {
         cep: cep,
         cidade: cidade,
         estado: estado,
+        referencia: referencia,
         tipo: tipoEnvio
       };
         
@@ -354,6 +359,14 @@ export default function Endereco(props) {
                       value={estado}
                       onChange={text => setEstado(text.target.value)}
                       disabled={enderecoSetadoByCep.estado}
+                    />
+                    <Form.Label>Referencia</Form.Label>
+                    <Form.Control
+                      size='sm'
+                      type="text"
+                      placeholder="BA"
+                      value={referencia}
+                      onChange={text => setReferencia(text.target.value)}
                     />
                   </Form.Group>
                 </Form>
