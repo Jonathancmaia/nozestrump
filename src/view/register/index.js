@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { TextField, Button } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeRegister, register, errorRegister } from '../../store/actions/register.action';
-import { Link, Redirect } from 'react-router-dom';
+import { changeRegister, register } from '../../store/actions/register.action';
 import { Modal, Container, Row, Col } from 'react-bootstrap';
 import { style } from './style.css';
+import { mask, unMask } from 'remask';
 
 export default function Register(props) {
 
@@ -77,9 +77,9 @@ export default function Register(props) {
                 error = {error.cpf && true}
                 margin = 'normal'
                 label = 'Cpf'
-                value = {user.cpf}
+                value = {mask(user.cpf, ['999.999.999-99'])}
                 onChange = {text => {
-                  dispatch( changeRegister({ cpf: text.target.value.replace(/[^0-9]/g, '') }));
+                  dispatch( changeRegister({ cpf: unMask(text.target.value) }));
                   error.cpf && delete error.cpf;
                 }}
                 fullWidth
@@ -113,10 +113,10 @@ export default function Register(props) {
                 error = {error.tel && true}
                 margin = 'normal'
                 label = 'Telefone'
-                value = {user.tel}
+                value = {mask(user.tel,['(99) 99999-9999'])}
                 type = 'text'
                 onChange = {text => {
-                  dispatch( changeRegister({ tel: text.target.value.replace(/[^0-9]/g, '') }));
+                  dispatch( changeRegister({ tel: unMask(text.target.value) }));
                   error.tel && delete error.tel
                 }}
                 fullWidth

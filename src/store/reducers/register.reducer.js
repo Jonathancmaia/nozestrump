@@ -16,6 +16,7 @@ const initialState = {
 export default (state = initialState, { type, data }) => {
   switch (type) {
     case actionTypes.CHANGE:
+      console.log(state.user)
       return {
         ...state,
         user: {

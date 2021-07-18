@@ -162,7 +162,6 @@ export default function BannerItems(){
   let itensShow = items.ITEMS.slice(indexItens, indexItens + 15);
 
   useEffect(()=>{
-    let itensShow = items.ITEMS.slice(indexItens, indexItens + 15);
     let numPages =  Math.ceil(qtdItens/15);
 
     if (pgAtual < numPages){
@@ -265,22 +264,46 @@ export default function BannerItems(){
             vertical={ width <= 768 ? true : false }
           >
             <Button variant="secondary" className='d-flex justify-content-center mb-3'
-              onClick={(e)=>{setTipoItens(1)}}
+              onClick={
+                (e)=>{
+                  setPgAtual(1);
+                  setIndexItens(0);
+                  setTipoItens(2);
+                }
+              }
             >
               Camisas Slim
             </Button>
             <Button variant="secondary" className='d-flex justify-content-center mb-3'
-              onClick={(e)=>{setTipoItens(2)}}
+              onClick={
+                (e)=>{
+                  setPgAtual(1);
+                  setIndexItens(0);
+                  setTipoItens(2);
+                }
+              }
             >
               Camisas Street
             </Button>
             <Button variant="secondary" className='d-flex justify-content-center mb-3'
-              onClick={(e)=>{setTipoItens(3)}}
+              onClick={
+                (e)=>{
+                  setPgAtual(1);
+                  setIndexItens(0);
+                  setTipoItens(3);
+                }
+              }
             >
               Calçados
             </Button>
             <Button variant="secondary" className='d-flex justify-content-center mb-3'
-              onClick={(e)=>{setTipoItens(4)}}
+              onClick={
+                (e)=>{
+                  setPgAtual(1);
+                  setIndexItens(0);
+                  setTipoItens(4);
+                }
+              }
             >
               Bermudas e calças
             </Button>
