@@ -117,7 +117,8 @@ export default function Endereco(props) {
               bairro: response.data.bairro,
               cep: cep,
               cidade: response.data.localidade,
-              estado: response.data.uf
+              estado: response.data.uf,
+              referencia: referencia
             })
             
             if (response.data.logradouro !== undefined || response.data.logradouro !== ''){
@@ -151,25 +152,26 @@ export default function Endereco(props) {
               estado: estadoChecked
             });
             
+            //consulta o frete
+            setFreteLoading(true);
+            HttpAuth.post('frete', {
+              cep: endereco.cep
+            }).then(
+              (response) => {
+                if (response === undefined || response === '' || response === []){
+                  //nada kk
+                } else {
+                  setSedex(response.data[0]);
+                  setPac(response.data[1]);
+                  setFreteLoading(false);
+                }
+              }
+            );
+
           }
+
           setCepLoading(false);
         })
-
-        //consulta o frete
-
-        HttpAuth.post('frete', {
-          cep: endereco.cep
-        }).then(
-          (response) => {
-            if (response === undefined || response === '' || response === []){
-              console.log(response)
-            } else {
-              setSedex(response.data[0]);
-              setPac(response.data[1]);
-              setFreteLoading(false);
-            }
-          }
-        );
       }
     }
 
@@ -179,19 +181,20 @@ export default function Endereco(props) {
   function buscaEndereco (){
     HttpAuth.get('cliente/'+props.id+'/endereco').then(
       (response) => {
-        if (response.data.length > 0) {
+        
+        if (response.data.length > 0 || response.data !== undefined) {
 
           setQtdEndereco(response.data.length);
-          
+
           setEndereco({
             rua: rua,
-            numero: response.data.numero[qtdEndereco-1],
-            complemento: response.data.complemento[qtdEndereco-1],
+            numero: response.data[qtdEndereco-1].numero,
+            complemento: response.data[qtdEndereco-1].complemento,
             bairro: bairro,
-            cep: response.data.cep[qtdEndereco-1],
+            cep: response.data[qtdEndereco-1].cep,
             cidade: cidade,
             estado: estado,
-            referencia: response.data.referencia[qtdEndereco-1]
+            referencia: response.data[qtdEndereco-1].referencia
           });
         } else {
           setCepLoading(false);
@@ -239,6 +242,7 @@ export default function Endereco(props) {
         items: JSON.stringify(itemsIdQtd),
         endereco: JSON.stringify(endereco)
       };
+      
       HttpAuth.post('checkout', pedido).then(
         (response) => {
           window.location = response.data;
@@ -364,7 +368,7 @@ export default function Endereco(props) {
                     <Form.Control
                       size='sm'
                       type="text"
-                      placeholder="BA"
+                      placeholder="Próximo à praça"
                       value={referencia}
                       onChange={text => setReferencia(text.target.value)}
                     />
