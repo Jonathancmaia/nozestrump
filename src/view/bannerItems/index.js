@@ -97,7 +97,7 @@ export default function BannerItems(){
 
     //Tipos de vestimenta:
     //  1 - Camisa Slim (P ao XG)
-    //  2 - Camisa Street (M ao XXG)
+    //  2 - Camisa Regatas (M ao XXG)
     //  3 - Chinelo (37 ao 43)
     //  4 - Bermudas e calças (P ao G)
     if (tipo !== 3){
@@ -268,7 +268,7 @@ export default function BannerItems(){
                 (e)=>{
                   setPgAtual(1);
                   setIndexItens(0);
-                  setTipoItens(2);
+                  setTipoItens(1);
                 }
               }
             >
@@ -283,7 +283,7 @@ export default function BannerItems(){
                 }
               }
             >
-              Camisas Street
+              Camisas Regatas
             </Button>
             <Button variant="secondary" className='d-flex justify-content-center mb-3'
               onClick={

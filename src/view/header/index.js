@@ -10,6 +10,7 @@ import Cart from '../cart';
 import { set_active } from '../../store/actions/cart.action';
 import Auth from '../auth';
 import { Navbar, Nav, Popover, OverlayTrigger, Button, ListGroup } from 'react-bootstrap';
+import Encomendas from '../encomendas';
 
 
 export default function Header() {
@@ -40,7 +41,7 @@ export default function Header() {
       <Popover.Title as="h3">Opções</Popover.Title>
       <Popover.Content>
         <ListGroup>
-          <ListGroup.Item>Meus pedidos</ListGroup.Item>
+          <Encomendas />
           <ListGroup.Item>Mudar senha</ListGroup.Item>
           <ListGroup.Item action onClick={logout}>
             Logout
