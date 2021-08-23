@@ -70,21 +70,11 @@ export default function Encomendas() {
                     </thead>
                     <tbody>
                       {pedidos.map((pedido)=>(<>
-                        <tr>
-                          <td>
-                            {pedido.valor}
-                          </td>
-                          <td>
-                            itens
-                          </td>
-                          <td>
-                            {
-                              <ConsultaEncomenda 
-                                token={pedido.transaction_code}
-                              />
-                            }
-                          </td>
-                        </tr>
+                        {
+                          <ConsultaEncomenda 
+                            token={pedido.transaction_code}
+                          />
+                        }
                       </>))}
                     </tbody>
                   </Table>
