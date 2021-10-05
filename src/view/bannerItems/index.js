@@ -20,6 +20,10 @@ import InputLabel from '@material-ui/core/InputLabel';
 import { changeNotify } from '../../store/actions/notify.action';
 import { add_items, remove_items, get_cart } from '../../store/actions/cart.action';
 import { SignalCellularNoSimOutlined } from '@material-ui/icons';
+import tshrit from '../../public/icons/tshirt.png';
+import sleevelessShirt from '../../public/icons/sleeveless-shirt.png';
+import shorts from '../../public/icons/shorts.png';
+import sneakers from '../../public/icons/sneakers.png';
 
 export default function BannerItems(){
 
@@ -64,7 +68,7 @@ export default function BannerItems(){
 
       dispatch( photo( items_id ) );
 
-      setQtdItens(items.ITEMS.length)
+      setQtdItens(items.ITEMS.length);
 
     }
   }, [items.LOADING]);
@@ -263,7 +267,7 @@ export default function BannerItems(){
             className="mb-2 col-12 button-group"
             vertical={ width <= 768 ? true : false }
           >
-            <Button variant="secondary" className='d-flex justify-content-center mb-3'
+            <Button variant='outline-dark'  className='d-flex justify-content-center mb-3 botao-classes'
               onClick={
                 (e)=>{
                   setPgAtual(1);
@@ -272,9 +276,20 @@ export default function BannerItems(){
                 }
               }
             >
-              Camisas Slim
+              <Container>
+                <Row>
+                  <Col>
+                    <img src={tshrit} width='25%' />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    Camisas Slim
+                  </Col>
+                </Row>
+              </Container>
             </Button>
-            <Button variant="secondary" className='d-flex justify-content-center mb-3'
+            <Button variant='outline-dark' className='d-flex justify-content-center mb-3 botao-classes'
               onClick={
                 (e)=>{
                   setPgAtual(1);
@@ -283,9 +298,20 @@ export default function BannerItems(){
                 }
               }
             >
-              Camisas Regatas
+              <Container>
+                <Row>
+                  <Col>
+                    <img src={sleevelessShirt} width='25%' />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    Camisas Regatas
+                  </Col>
+                </Row>
+              </Container>
             </Button>
-            <Button variant="secondary" className='d-flex justify-content-center mb-3'
+            <Button variant='outline-dark' className='d-flex justify-content-center mb-3 botao-classes'
               onClick={
                 (e)=>{
                   setPgAtual(1);
@@ -294,9 +320,20 @@ export default function BannerItems(){
                 }
               }
             >
-              Calçados
+              <Container>
+                <Row>
+                  <Col>
+                    <img src={sneakers} width='25%' />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    Calçados
+                  </Col>
+                </Row>
+              </Container>
             </Button>
-            <Button variant="secondary" className='d-flex justify-content-center mb-3'
+            <Button variant='outline-dark' className='d-flex justify-content-center mb-3 botao-classes'
               onClick={
                 (e)=>{
                   setPgAtual(1);
@@ -305,7 +342,18 @@ export default function BannerItems(){
                 }
               }
             >
-              Bermudas e calças
+              <Container>
+                <Row>
+                  <Col>
+                    <img src={shorts} width='25%' />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    Calças e bermudas
+                  </Col>
+                </Row>
+              </Container>
             </Button>
           </ButtonGroup>
         </div>
@@ -341,11 +389,11 @@ export default function BannerItems(){
                   onClick={(e)=>handleOpen(item.id, item.desc, item.preco, item.tipo)}
                   className='apontador'
                 >
-                  <div className='row desc d-flex flex-row'>
-                    <div className="pl-3 pr-3">
-                      <center>{item.desc}</center>
-                    </div>
-                  </div>
+                  <Row className='row desc d-flex flex-row'>
+                    <Col>
+                      {item.desc}
+                    </Col>
+                  </Row>
                   <div className='preco'>
                     <center>
                       R$ 

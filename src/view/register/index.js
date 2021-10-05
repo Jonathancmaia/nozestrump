@@ -27,7 +27,7 @@ export default function Register(props) {
     setOpen(false);
   }
 
-  // Conferência das senhas e valida o formulario
+  //Conferência das senhas e valida o formulario
   const [errorConfPassword, setErrorConfPassword] = useState(false);
 
   useEffect(()=>{

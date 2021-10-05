@@ -2,7 +2,8 @@
   background-color: #FFF;
   padding: 5px;
   margin: 5px;
-  transition: 0.3s; 
+  transition: 0.3s;
+  border: none;
 }
 
 .card:hover, .foto {
@@ -11,8 +12,8 @@
 }
 
 .desc {
-  font-size: 1.4rem;
-  font-weight: 100;
+  font-size: 1.2rem;
+  font-weight: 90;
 }
 
 .preco {
@@ -45,14 +46,23 @@ h1 {
   cursor: pointer;
 }
 
-.categories {
-  min-height: 6vh;
-  background-color: #474a51;
-  color: white;
-}
-
 .modalOpenedItem {
   padding: 3%;
+}
+
+.botao-classes {
+  filter: invert(0%);
+  transition: 0.2s;
+  background-color: #FFF;
+  color: #000;
+  border: none;
+}
+
+.botao-classes:hover {
+  filter: invert(25%);
+  transition: 0.2s;
+  background-color: #FFF;
+  color: #000;
 }
 
 .photo-container {

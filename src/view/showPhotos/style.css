@@ -4,19 +4,19 @@
 
 @media screen and (max-width: 767px) {
   .carousel {
-    max-width: 35vh;
+    max-width: 80vh;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px){
   .carousel {
-    max-width: 25vh;
+    max-width: 26vh;
   }
 }
 
 @media screen and (min-width: 992px) {
   .carousel {
-    max-width: 30vh;
+    max-width: 35vh;
   }
 }
 
