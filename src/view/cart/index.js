@@ -120,7 +120,12 @@ export default function Cart(props){
   return (
     <>
       <Endereco id={me.ID} open={enderecoOpen}/>
-      <Modal show={open} onHide={handleClose} size='xl'>
+      <Modal
+        show={open}
+        onHide={handleClose}
+        size='xl'
+        className='modal-content-cart'
+      >
         <Modal.Header closeButton>
           <h2>
             Carrinho
