@@ -132,7 +132,7 @@ export default function Cart(props){
               {cart.ITEMS.map( (item) =>
                 <div key={item.id}>
                   <Row>
-                    <Col>
+                    <Col className='d-flex justify-content-center'>
                       {
                         items.LOADING_PHOTO ?
                         <CircularProgress />
@@ -143,9 +143,9 @@ export default function Cart(props){
                     <Col>
                       <div className='namePrice-container'>
                         <div className='name-container'>
-                          <h3>
+                          <h4>
                             {item.nome}
-                          </h3>
+                          </h4>
                         </div>
                         <Row className='name-container'>
                           <Col className='pt-3'>
