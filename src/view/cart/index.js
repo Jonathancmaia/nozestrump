@@ -137,7 +137,7 @@ export default function Cart(props){
                         items.LOADING_PHOTO ?
                         <CircularProgress />
                           :
-                        <ShowPhotos id={item.id} />
+                        <ShowPhotos id={item.id} cart='true' />
                       }
                     </Col>
                     <Col>

@@ -4,7 +4,11 @@
 
 @media screen and (max-width: 767px) {
   .carousel {
-    max-width: 80vh;
+    max-width: 70vh;
+  }
+
+  .carousel-cart{
+    max-width: 25vh;
   }
 }
 
@@ -12,11 +16,19 @@
   .carousel {
     max-width: 26vh;
   }
+
+  .carousel-cart{
+    max-width: 25vh;
+  }
 }
 
 @media screen and (min-width: 992px) {
   .carousel {
     max-width: 35vh;
+  }
+
+  .carousel-cart{
+    max-width: 25vh;
   }
 }
 

@@ -6,25 +6,31 @@ import BannerItems from './view/bannerItems';
 import Header from './view/header';
 import Footer from './view/footer';
 import { Carousel } from 'react-bootstrap';
+import texto02 from './public/banners/texto02.png';
+import texto3 from './public/banners/texto3.png';
 
 const Section1 = styled.div`
   min-height: 60vh;
   width: 100vw;
-  min-height: 60vh;
   background-image: url(${capa03});
   background-size: cover;
   background-position: 50% 40%;
   background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Section2 = styled.div`
-  min-height: 60vh;
-  width: 100vw;
-  min-height: 60vh;
-  background-image: url(${capa02});
-  background-size: cover;
-  background-position: 50% 25%;
-  background-repeat: no-repeat;
+min-height: 60vh;
+width: 100vw;
+background-image: url(${capa02});
+background-size: cover;
+background-position: 50% 40%;
+background-repeat: no-repeat;
+display: flex;
+align-items: center;
+justify-content: center;
 `;
 
 const BannerRow = styled.div`
@@ -38,6 +44,11 @@ const Section3 = styled.div`
   width: 100%;
 `;
 
+const IMG = styled.img`
+  max-width: 50vw;
+  max-height: 30vh;
+`;
+
 const Items = styled.div`
   height: 100%;
 `;
@@ -49,35 +60,19 @@ export default function Welcome() {
       <Header />
       <Carousel className='carousel-dif'>
         <Carousel.Item>
-          <Section1 className='container-fluid'>
-            <div className='row'>
-              <div className='col-12'>
-                <center className='banner-text'>
-                  <h1>
-                    SEJA NOZES TRUMP
-                  </h1>
-                  <h3>
-                    Confira os melhores preços de lançamento
-                  </h3>
-                </center>
-              </div>
-            </div>
+          <Section1>
+            <IMG
+              src={texto02}
+              alt="First slide"
+            />
           </Section1>
         </Carousel.Item>
         <Carousel.Item>
-          <Section2>
-            <div className='row'>
-              <div className='col-12'>
-                <center className='banner-text'>
-                  <h1>
-                    Moda masculina
-                  </h1>
-                  <h3>
-                    Melhores ofertas em moda masculina
-                  </h3>
-                </center>
-              </div>
-            </div>
+        <Section2>
+            <IMG
+              src={texto3}
+              alt="Second slide"
+            />
           </Section2>
         </Carousel.Item>
       </Carousel>
