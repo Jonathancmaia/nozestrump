@@ -7,6 +7,7 @@ import Register from'./register.reducer';
 import Items from './items.reducer';
 import Me from './me.reducer';
 import Cart from './cart.reducer';
+import Problem from './problem.reducer';
 
 const rootReducer = combineReducers({
   Loading,
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   Register,
   Items,
   Me,
-  Cart
+  Cart,
+  Problem
 });
 
 export default rootReducer;

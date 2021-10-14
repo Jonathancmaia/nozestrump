@@ -1,13 +1,11 @@
-import { actionTypes } from '../actions/register.action';
+import { actionTypes } from '../actions/problem.action';
 
 const initialState = {
-  user: {
-    'name': '',
+  problem: {
+    'nome': '',
     'email': '',
-    'password': '',
-    'cpf': '',
-    'tel': '',
-    'conf_password': ''
+    'telefone': '',
+    'problema': ''
   },
   success: false,
   error: {}
@@ -18,8 +16,8 @@ export default (state = initialState, { type, data }) => {
     case actionTypes.CHANGE:
       return {
         ...state,
-        user: {
-          ...state.user,
+        problem: {
+          ...state.problem,
           ...data
         }
       }
