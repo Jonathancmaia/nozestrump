@@ -127,14 +127,14 @@ export default function BannerItems(){
     } else {
       return (<>
         <FormControl>
-          <InputLabel id="demo-simple-select-label">TAMANHO</InputLabel>
+          <InputLabel id="tam-select" displayEmpty='true'>TAMANHO</InputLabel>
           <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
+            labelId="tam-select"
+            id="simple-select"
             value={tamanho}
             onChange={handleChange}
           >
-            <MenuItem value={37}>37</MenuItem>
+            <MenuItem value={37} selected>37</MenuItem>
             <MenuItem value={38}>38</MenuItem>
             <MenuItem value={39}>39</MenuItem>
             <MenuItem value={40}>40</MenuItem>

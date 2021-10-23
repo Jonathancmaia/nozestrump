@@ -206,7 +206,7 @@ export default function Endereco(props) {
   //Payment call (pagseguro)
   function payment(){
 
-    setDisableButton(true);
+    setFreteLoading(true);
 
     let cart = localStorage.getItem('storeCart');
 
@@ -448,9 +448,8 @@ export default function Endereco(props) {
                     <Button
                       variant='success'
                       onClick={(e)=>{payment()}}
-                      disabled={disableButton}
-                      size='lg'
                       disabled={freteLoading}
+                      size='lg'
                     >
                     Confirmar endereço e iniciar pagamento
                     </Button>

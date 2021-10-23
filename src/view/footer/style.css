@@ -13,3 +13,9 @@ li:hover {
   color: red;
   transition: 0.4s;
 }
+
+#link-report:hover{
+  color: red;
+  cursor: pointer;
+  margin-bottom: 20px;
+}

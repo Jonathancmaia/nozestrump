@@ -62,113 +62,108 @@ export default function Footer() {
             </div>
             <div class='row'>
               <div class='col-12'>
-                <ol>
-                  <li>
-                    <a onClick={handleShow}>
-                      Tive um problema com meu pedido
-                    </a>
-                  </li>
-                    <Modal show={show} onHide={handleClose}>
-                      <Modal.Header closeButton>
-                        <Modal.Title>Relatar problema com pedido</Modal.Title>
-                      </Modal.Header>
-                      <Modal.Body>
-                        <Form.Group
-                          className="mb-3"
-                          controlId="informacoes"
-                        >
-                          <Form.Label>E-mail</Form.Label>
-                            <Form.Control
-                              error = {error.email && true}
-                              margin = 'normal'
-                              label = 'Email'
-                              value = {problem.email}
-                              type = 'email'
-                              autoComplete = 'email'
-                              onChange = {text => {
-                                dispatch( changeProblem({ email: text.target.value }));
-                                error.email && delete error.email
-                              }}
-                              fullWidth
-                            />
-                          {error.email && 
-                            <strong className='text-danger'>{error.email[0]}</strong>
-                          }
-                          <Form.Label>Nome</Form.Label>
-                          <Form.Control
-                            error = {error.nome && true}
-                            margin = 'normal'
-                            label = 'Nome'
-                            value = {problem.nome}
-                            type = 'nome'
-                            autoComplete = 'name'
-                            onChange = {text => {
-                              dispatch( changeProblem({ nome: text.target.value }));
-                                error.nome && delete error.nome
-                              }}
-                            fullWidth
-                            />
-                          {error.nome && 
-                            <strong className='text-danger'>{error.nome[0]}</strong>
-                          }
-                          <Form.Label>Telefone</Form.Label>
-                          <Form.Control
-                            error = {error.telefone && true}
-                            margin = 'normal'
-                            label = 'Telefone'
-                            value = {mask(problem.telefone,['(99) 99999-9999'])}
-                            type = 'telefone'
-                            autoComplete = 'telephone'
-                            onChange = {text => {
-                              dispatch( changeProblem({ 
-                                telefone: unMask(text.target.value) 
-                              }));
-                                error.telefone && delete error.telefone
-                              }}
-                            fullWidth
-                            />
-                          {error.telefone && 
-                            <strong className='text-danger'>{error.telefone[0]}</strong>
-                          }
-                        </Form.Group>
-                        <Form.Group
-                          className="mb-3"
-                          controlId="exampleForm.ControlTextarea1"
-                        >
-                          <Form.Label>Relate seu problema</Form.Label>
-                          <Form.Control
-                            error = {error.problema && true}
-                            margin = 'normal'
-                            label = 'Problema'
-                            value = {problem.problema}
-                            type = 'problema'
-                            rows = '3'
-                            as="textarea"
-                            autoComplete = 'problema'
-                            onChange = {text => {
-                              dispatch( changeProblem({ problema: text.target.value }));
-                                error.problema && delete error.problema
-                              }}
-                            fullWidth
-                            />
-                          {error.problema && 
-                            <strong className='text-danger'>{error.problema[0]}</strong>
-                          }
-                        </Form.Group>
-                      </Modal.Body>
-                      <Modal.Footer>
-                        <Button 
-                          variant="primary"
-                          onClick={(e)=>(dispatch( enviarProblema(problem) )) }
-                        >
-                          Enviar
-                        </Button>
-                      </Modal.Footer>
-                    </Modal>
-                  <li>
-                    <a>Reportar um bug</a>
-                  </li>
-                </ol>
+                <center>
+                  <a onClick={handleShow} id='link-report'>
+                    Relate seu problema ou bug
+                  </a>
+                </center>
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Relatar problema com pedido</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <Form.Group
+                      className="mb-3"
+                      controlId="informacoes"
+                    >
+                      <Form.Label>E-mail</Form.Label>
+                        <Form.Control
+                          error = {error.email && true}
+                          margin = 'normal'
+                          label = 'Email'
+                          value = {problem.email}
+                          type = 'email'
+                          autoComplete = 'email'
+                          onChange = {text => {
+                            dispatch( changeProblem({ email: text.target.value }));
+                            error.email && delete error.email
+                          }}
+                          fullWidth
+                        />
+                      {error.email && 
+                        <strong className='text-danger'>{error.email[0]}</strong>
+                      }
+                      <Form.Label>Nome</Form.Label>
+                      <Form.Control
+                        error = {error.nome && true}
+                        margin = 'normal'
+                        label = 'Nome'
+                        value = {problem.nome}
+                        type = 'nome'
+                        autoComplete = 'name'
+                        onChange = {text => {
+                          dispatch( changeProblem({ nome: text.target.value }));
+                            error.nome && delete error.nome
+                          }}
+                        fullWidth
+                        />
+                      {error.nome && 
+                        <strong className='text-danger'>{error.nome[0]}</strong>
+                      }
+                      <Form.Label>Telefone</Form.Label>
+                      <Form.Control
+                        error = {error.telefone && true}
+                        margin = 'normal'
+                        label = 'Telefone'
+                        value = {mask(problem.telefone,['(99) 99999-9999'])}
+                        type = 'telefone'
+                        autoComplete = 'telephone'
+                        onChange = {text => {
+                          dispatch( changeProblem({ 
+                            telefone: unMask(text.target.value) 
+                          }));
+                            error.telefone && delete error.telefone
+                          }}
+                        fullWidth
+                        />
+                      {error.telefone && 
+                        <strong className='text-danger'>{error.telefone[0]}</strong>
+                      }
+                    </Form.Group>
+                    <Form.Group
+                      className="mb-3"
+                      controlId="exampleForm.ControlTextarea1"
+                    >
+                      <Form.Label>Relate seu problema</Form.Label>
+                      <Form.Control
+                        error = {error.problema && true}
+                        margin = 'normal'
+                        label = 'Problema'
+                        value = {problem.problema}
+                        type = 'problema'
+                        rows = '3'
+                        as="textarea"
+                        autoComplete = 'problema'
+                        onChange = {text => {
+                          dispatch( changeProblem({ problema: text.target.value }));
+                            error.problema && delete error.problema
+                          }}
+                        fullWidth
+                        />
+                      {error.problema && 
+                        <strong className='text-danger'>{error.problema[0]}</strong>
+                      }
+                    </Form.Group>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button 
+                      variant="primary"
+                      onClick={(e)=>(dispatch( enviarProblema(problem) )) }
+                    >
+                      Enviar
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
               </div>
             </div>
           </div>

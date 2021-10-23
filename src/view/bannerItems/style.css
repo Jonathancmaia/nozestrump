@@ -70,6 +70,6 @@ h1 {
   padding-top: 3%;
 }
 
-.tamanho{
-  padding: 3%;
+.MuiInputBase-input {
+  min-width: 20vw !important;
 }
