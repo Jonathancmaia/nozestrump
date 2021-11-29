@@ -10,7 +10,9 @@ import Cart from '../cart';
 import { set_active } from '../../store/actions/cart.action';
 import Auth from '../auth';
 import { Navbar, Nav, Popover, OverlayTrigger, Button, ListGroup } from 'react-bootstrap';
+import { changeShowItems } from '../../store/actions/showItems.action';
 import Encomendas from '../encomendas';
+import logont from '../../public/banners/logont.png';
 
 
 export default function Header() {
@@ -32,6 +34,9 @@ export default function Header() {
     window.location.reload();
   }
 
+  //Seleção de categoria de itens
+  const showItems = useSelector(state => state.ShowItems);
+
   //ABERTURA E FECHAMENTO DO LOGIN
   const [opened, setOpened] = useState();
 
@@ -42,7 +47,7 @@ export default function Header() {
       <Popover.Content>
         <ListGroup>
           <Encomendas />
-          <ListGroup.Item>Mudar senha</ListGroup.Item>
+          {/*<ListGroup.Item>Mudar senha</ListGroup.Item>*/}
           <ListGroup.Item action onClick={logout}>
             Logout
           </ListGroup.Item>
@@ -53,7 +58,7 @@ export default function Header() {
   
   const Usuario = () => (
     <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
-      <Button variant="outline-secondary">Olá, {me.NAME}</Button>
+      <Button className='loginButton botao'>Olá, {me.NAME}</Button>
     </OverlayTrigger>
   );
 
@@ -65,17 +70,30 @@ export default function Header() {
 
         <Navbar bg="dark" variant="dark" expand="md" className='navbar'>
           <Navbar.Brand className='logo'>
-            <h3>
-              Nozes Trump
-            </h3>
+            <img id='logoNT' src={logont}>
+            </img>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar" />
-          <Navbar.Collapse id="navbar" className="justify-content-end">
+          <Navbar.Collapse id="navbar" className='justify-content-around'>
+            <Nav>
+              <Nav.Link href='#' onClick={(e)=>{dispatch(changeShowItems(1))}}>
+                Camisas Slim
+              </Nav.Link>
+              <Nav.Link href='#' onClick={(e)=>{dispatch(changeShowItems(2))}}>
+                Camisas regata
+              </Nav.Link>
+              <Nav.Link href='#' onClick={(e)=>{dispatch(changeShowItems(3))}}>
+                Calçados
+              </Nav.Link>
+              <Nav.Link href='#' onClick={(e)=>{dispatch(changeShowItems(4))}}>
+                Calças & Bermudas
+              </Nav.Link>
+            </Nav>
             <Nav>
               <Nav.Link href='#'>
                 {(me.LOADING) ?
                   <div className="d-flex jultify-content-center">
-                    <Button variant="outline-secondary">
+                    <Button className='botao'>
                       <CircularProgress />
                     </Button>
                   </div>
@@ -84,8 +102,7 @@ export default function Header() {
                       <Usuario />                  
                       :
                       <Button
-                      variant="outline-secondary"
-                      className='loginButton'
+                      className='loginButton botao'
                       onClick={
                         (e) => { 
                           setOpened(true);
@@ -101,7 +118,8 @@ export default function Header() {
               </Nav.Link>
 
               <Nav.Link href='#'>
-                <Button variant="outline-secondary"
+                <Button
+                  className='botao'
                   onClick={(e)=>{
                     dispatch( set_active(true) );
                   }

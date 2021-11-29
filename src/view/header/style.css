@@ -1,14 +1,24 @@
-@font-face {
-  font-family: 'FallingSkyBlkObl';
-  src: url(../../public/fonts/FallingSkyBlkObl.otf) format('truetype');
-  font-weight: normal;
-  font-style: normal;
+.logo, Nav, .nav-link {
+  font-family: 'Teko' !important;
+  font-size: 1.4rem;
+  color: white !important;
 }
 
-.logo {
-  font-family: 'FallingSkyBlkObl' !important;
+.nav-link:hover, .botao:hover {
+  color: rgb(255,255,255,0.6) !important;
 }
+
 
 .navbar{
-  background-color: #474a51 !important;
+  background-color: black !important;
+}
+
+.botao {
+  background-color: rgb(0,0,0,0) !important;
+  border-style: none !important;
+  font-size: 1.4rem;
+}
+
+#logoNT{
+  height: 8vh;
 }

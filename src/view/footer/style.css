@@ -1,6 +1,12 @@
 .footer-container {
-  background-color: #3d3d3d;
+  font-family: 'TekoLight';
+  background-color: black;
   color: white;
+  font-size: 1.5rem;
+}
+
+.title {
+  font-family: 'Teko' !important;
 }
 
 li{

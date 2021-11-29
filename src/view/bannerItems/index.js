@@ -29,13 +29,19 @@ export default function BannerItems(){
 
   const dispatch = useDispatch();
   const items = useSelector(state => state.Items);
+  const showItems = useSelector(state => state.ShowItems);
 
   //Seleçãode itens a ser mostrado
   const [tipoItens, setTipoItens] = useState(0);
 
+
   useEffect(()=>{
     dispatch( index(tipoItens) );
   },[tipoItens]);
+
+  useEffect(()=>{
+    setTipoItens(showItems.data);
+  },[showItems.data]);
 
   function indexCall() {
     dispatch( index(0) );
@@ -259,109 +265,10 @@ export default function BannerItems(){
           </Container>
         </Modal.Footer>
       </Modal>
-    
-      <div className='container-fluid categories'>
-        <div className='row'>
-          <ButtonGroup 
-            size="lg" 
-            className="mb-2 col-12 button-group"
-            vertical={ width <= 768 ? true : false }
-          >
-            <Button variant='outline-dark'  className='d-flex justify-content-center mb-3 botao-classes'
-              onClick={
-                (e)=>{
-                  setPgAtual(1);
-                  setIndexItens(0);
-                  setTipoItens(1);
-                }
-              }
-            >
-              <Container>
-                <Row>
-                  <Col>
-                    <img src={tshrit} width='25%' />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    Camisas Slim
-                  </Col>
-                </Row>
-              </Container>
-            </Button>
-            <Button variant='outline-dark' className='d-flex justify-content-center mb-3 botao-classes'
-              onClick={
-                (e)=>{
-                  setPgAtual(1);
-                  setIndexItens(0);
-                  setTipoItens(2);
-                }
-              }
-            >
-              <Container>
-                <Row>
-                  <Col>
-                    <img src={sleevelessShirt} width='25%' />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    Camisas Regatas
-                  </Col>
-                </Row>
-              </Container>
-            </Button>
-            <Button variant='outline-dark' className='d-flex justify-content-center mb-3 botao-classes'
-              onClick={
-                (e)=>{
-                  setPgAtual(1);
-                  setIndexItens(0);
-                  setTipoItens(3);
-                }
-              }
-            >
-              <Container>
-                <Row>
-                  <Col>
-                    <img src={sneakers} width='25%' />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    Calçados
-                  </Col>
-                </Row>
-              </Container>
-            </Button>
-            <Button variant='outline-dark' className='d-flex justify-content-center mb-3 botao-classes'
-              onClick={
-                (e)=>{
-                  setPgAtual(1);
-                  setIndexItens(0);
-                  setTipoItens(4);
-                }
-              }
-            >
-              <Container>
-                <Row>
-                  <Col>
-                    <img src={shorts} width='25%' />
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    Calças e bermudas
-                  </Col>
-                </Row>
-              </Container>
-            </Button>
-          </ButtonGroup>
-        </div>
-      </div>
 
-      <div className="row justify-content-center">
+      <div className="row justify-content-center titulo">
         <div className="col-auto" onClick={(e)=>{setTipoItens(0)}}>
-          <h1 className='mb-4'>
+          <h1 className='mb-4 titulo'>
             {tipoItens === 0 && 'Últimas novidades'}
             {tipoItens === 1 && 'Camisas Slim'}
             {tipoItens === 2 && 'Camisas Street'}
@@ -380,18 +287,20 @@ export default function BannerItems(){
                 key={item.id}
                 className='col-md-3 d-flex card flex-column justify-content-between'
               >
-                <div className='row d-flex flex-row justify-content-center'>
-                    {
-                      items.LOADING_PHOTO ? <CircularProgress/> : <ShowPhotos id={item.id}/>
-                    }
-                </div>
                 <span 
                   onClick={(e)=>handleOpen(item.id, item.desc, item.preco, item.tipo)}
                   className='apontador'
                 >
+                  <div className='row d-flex flex-row justify-content-center'>
+                      {
+                        items.LOADING_PHOTO ? <CircularProgress/> : <ShowPhotos id={item.id}/>
+                      }
+                  </div>
                   <Row className='row desc d-flex flex-row'>
                     <Col>
-                      {item.desc}
+                      <center>
+                        {item.desc}
+                      </center>
                     </Col>
                   </Row>
                   <div className='preco'>
@@ -421,7 +330,7 @@ export default function BannerItems(){
         <Row>
           <Col className='d-flex justify-content-center align-items-center p-4'>
             <Button
-              variant='primary'
+              variant='outline-dark'
               size='lg'
               onClick={()=>paginaAnterior()}
               disabled={paginaAnteriorButton}
@@ -430,7 +339,7 @@ export default function BannerItems(){
               Página anterior
             </Button>
             <Button
-              variant='primary'
+              variant='outline-dark'
               size='lg'
               onClick={()=>proximaPagina()}
               disabled={proximaPaginaButton}

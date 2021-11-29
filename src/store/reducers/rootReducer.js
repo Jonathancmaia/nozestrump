@@ -8,6 +8,7 @@ import Items from './items.reducer';
 import Me from './me.reducer';
 import Cart from './cart.reducer';
 import Problem from './problem.reducer';
+import ShowItems from './showItems.reducer';
 
 const rootReducer = combineReducers({
   Loading,
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   Items,
   Me,
   Cart,
-  Problem
+  Problem,
+  ShowItems
 });
 
 export default rootReducer;

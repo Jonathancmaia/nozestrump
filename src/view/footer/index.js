@@ -19,7 +19,7 @@ export default function Footer() {
   return (
     <>
       <div className='container-fluid footer-container'>
-        <div class='row d-flex justify-content-center p-3'>
+        <div class='row d-flex justify-content-center p-3 title'>
           <small>
             Todos os direitos reservados.
           </small>
@@ -27,7 +27,7 @@ export default function Footer() {
         <div class='row'>
           <div class='col-md-6'>
             <div className='row'>
-              <div class='col-12 d-flex justify-content-center p-3'>
+              <div class='col-12 d-flex justify-content-center p-3 title'>
                 <h3>
                   Contato
                 </h3>
@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
           <div class='col-md-6'>
             <div className='row'>
-              <div class='col-12 d-flex justify-content-center p-3'>
+              <div className='col-12 d-flex justify-content-center p-3 title'>
                 <h3>
                  Links úteis
                 </h3>

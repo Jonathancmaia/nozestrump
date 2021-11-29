@@ -4,6 +4,8 @@
   margin: 5px;
   transition: 0.3s;
   border: none;
+  font-family: 'Teko';
+  font-size: 1.4rem;
 }
 
 .card:hover, .foto {
@@ -12,8 +14,10 @@
 }
 
 .desc {
-  font-size: 1.2rem;
-  font-weight: 90;
+  font-family: 'TekoLight' !important;
+  font-size: 1.4rem;
+  font-weight: 60;
+  height: 8vh;
 }
 
 .preco {
@@ -72,4 +76,8 @@ h1 {
 
 .MuiInputBase-input {
   min-width: 20vw !important;
+}
+
+.preco {
+  font-family: 'Teko';
 }

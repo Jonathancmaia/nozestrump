@@ -1,3 +1,26 @@
+@font-face {
+  font-family: 'Teko';
+  src: url(./public/fonts/Teko-Bold.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TekoLight';
+  src: url(./public/fonts/Teko-Light.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.modal-dialog, Button{
+  font-family: 'Teko';
+}
+
+.titulo{
+  color: black;
+  font-family: 'Teko';
+}
+
 .outline-none{
   outline: none !important;
 }
@@ -6,12 +29,12 @@ a, a:hover {
   text-decoration: none !important;
 }
 
-.header {
-  border-bottom: 2px solid rgb(229, 229, 229);
+.MuiInputBase-input {
+  font-family: 'Teko' !important;
 }
 
-.message {
-  font-family: 'FallingSkyBlkObl' !important;
+.header {
+  border-bottom: 2px solid rgb(229, 229, 229);
 }
 
 @media screen and (max-width: 767px) {
@@ -64,4 +87,8 @@ a, a:hover {
 .banner-text > h1{
   font-size: 350%;
   margin: 5vh;
+}
+
+.popover {
+  font-family: 'Teko';
 }

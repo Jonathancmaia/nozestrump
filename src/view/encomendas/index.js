@@ -69,6 +69,15 @@ export default function Encomendas() {
                       </tr>
                     </thead>
                     <tbody>
+                      {pedidos == '' && 
+                        <tr>
+                          <td colspan='3'>
+                            <center>
+                              Não há pedidos
+                            </center>
+                          </td>
+                        </tr>
+                      }
                       {pedidos.map((pedido)=>(<>
                         {
                           <ConsultaEncomenda 

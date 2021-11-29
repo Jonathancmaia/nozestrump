@@ -11,6 +11,7 @@ export default function ConsultaEncomenda(props) {
 
   useEffect(()=>{
     HttpAuth.get('/consultaEncomenda/'+props.token).then( (response)=>{
+
       if (typeof response !== undefined || typeof response === ''){
         
         setResponse(response);

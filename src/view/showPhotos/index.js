@@ -28,7 +28,12 @@ export default function ShowPhotos(props){
   </Carousel.Item>);
 
   return (<>
-    <Carousel className='carousel' className={carouselType} indicators={false}>
+    <Carousel
+      className='carousel'
+      className={carouselType}
+      indicators={false}
+      controls={false}
+    >
       {photos}
     </Carousel>
   </>)
