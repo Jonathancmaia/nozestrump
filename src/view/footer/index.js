@@ -93,6 +93,7 @@ export default function Footer() {
                       {error.email && 
                         <strong className='text-danger'>{error.email[0]}</strong>
                       }
+                      <br/>
                       <Form.Label>Nome</Form.Label>
                       <Form.Control
                         error = {error.nome && true}
@@ -110,6 +111,7 @@ export default function Footer() {
                       {error.nome && 
                         <strong className='text-danger'>{error.nome[0]}</strong>
                       }
+                      <br/>
                       <Form.Label>Telefone</Form.Label>
                       <Form.Control
                         error = {error.telefone && true}
