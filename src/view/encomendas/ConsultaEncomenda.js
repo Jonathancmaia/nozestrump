@@ -53,19 +53,23 @@ export default function ConsultaEncomenda(props) {
           </td>
           <td>
             <Table striped bordered hover>
-              {response.data.items.item.map((item)=>(<>
-                <tr>
-                  <td>
-                    {item.description}
-                  </td>
-                  <td>
-                    {item.quantity}
-                  </td>
-                  <td>
-                    {item.amount}
-                  </td>
-                </tr>
-              </>))}
+              {response.data.items !== undefined ? 
+                response.data.items.item.map((item)=>(<>
+                  <tr>
+                    <td>
+                      {item.description}
+                    </td>
+                    <td>
+                      {item.quantity}
+                    </td>
+                    <td>
+                      {item.amount}
+                    </td>
+                  </tr>
+                </>))
+              :
+              <></>  
+              }
             </Table>
           </td>
           <td>

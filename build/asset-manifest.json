@@ -3,8 +3,8 @@
     "static/js/0.cd287fc9.chunk.js": "/static/js/0.cd287fc9.chunk.js",
     "static/js/0.cd287fc9.chunk.js.map": "/static/js/0.cd287fc9.chunk.js.map",
     "main.css": "/static/css/main.ebbb95c5.chunk.css",
-    "main.js": "/static/js/main.85b89e19.chunk.js",
-    "main.js.map": "/static/js/main.85b89e19.chunk.js.map",
+    "main.js": "/static/js/main.122a0739.chunk.js",
+    "main.js.map": "/static/js/main.122a0739.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.1123a01b.js",
     "runtime-main.js.map": "/static/js/runtime-main.1123a01b.js.map",
     "static/css/3.4c97ca4f.chunk.css": "/static/css/3.4c97ca4f.chunk.css",
@@ -31,7 +31,7 @@
     "static/js/4.3e6fe5f0.chunk.js.LICENSE.txt": "/static/js/4.3e6fe5f0.chunk.js.LICENSE.txt",
     "static/js/6.b6727a1e.chunk.js.LICENSE.txt": "/static/js/6.b6727a1e.chunk.js.LICENSE.txt",
     "static/js/7.c4c85a93.chunk.js.LICENSE.txt": "/static/js/7.c4c85a93.chunk.js.LICENSE.txt",
-    "static/js/main.85b89e19.chunk.js.LICENSE.txt": "/static/js/main.85b89e19.chunk.js.LICENSE.txt",
+    "static/js/main.122a0739.chunk.js.LICENSE.txt": "/static/js/main.122a0739.chunk.js.LICENSE.txt",
     "static/media/style.css": "/static/media/Teko-Light.f23c67d4.ttf",
     "static/media/capa02.3a61dce3.jpg": "/static/media/capa02.3a61dce3.jpg",
     "static/media/capa03.973cc6f6.jpg": "/static/media/capa03.973cc6f6.jpg",
@@ -48,6 +48,6 @@
     "static/css/3.4c97ca4f.chunk.css",
     "static/js/3.9e6741d6.chunk.js",
     "static/css/main.ebbb95c5.chunk.css",
-    "static/js/main.85b89e19.chunk.js"
+    "static/js/main.122a0739.chunk.js"
   ]
 }

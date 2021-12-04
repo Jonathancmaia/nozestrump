@@ -14,7 +14,6 @@ import { changeShowItems } from '../../store/actions/showItems.action';
 import Encomendas from '../encomendas';
 import logont from '../../public/banners/logont.png';
 
-
 export default function Header() {
 
   const me = useSelector (state => state.Me);
@@ -42,22 +41,23 @@ export default function Header() {
 
   //Popover do login
   const popover = (
-    <Popover id="popover-basic">
-      <Popover.Title as="h3">Opções</Popover.Title>
-      <Popover.Content>
-        <ListGroup>
-          <Encomendas />
-          {/*<ListGroup.Item>Mudar senha</ListGroup.Item>*/}
-          <ListGroup.Item action onClick={logout}>
-            Logout
-          </ListGroup.Item>
-        </ListGroup>
-      </Popover.Content>
-    </Popover>
+    
+      <Popover id="popover-basic">
+        <Popover.Title as="h3">Opções</Popover.Title>
+        <Popover.Content>
+          <ListGroup>
+            <Encomendas />
+            {/*<ListGroup.Item>Mudar senha</ListGroup.Item>*/}
+            <ListGroup.Item action onClick={logout}>
+              Logout
+            </ListGroup.Item>
+          </ListGroup>
+        </Popover.Content>
+      </Popover>
   );
   
   const Usuario = () => (
-    <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+    <OverlayTrigger trigger="focus" placement="bottom" overlay={popover}>
       <Button className='loginButton botao'>Olá, {me.NAME}</Button>
     </OverlayTrigger>
   );
