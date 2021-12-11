@@ -16,7 +16,7 @@ export default function Endereco(props) {
   const [open, setOpen] = useState(false);
 
   //Mecanismo para testar sucesso na função de CEP
-  const [consultaCepIsSucceful, setConsultaCepIsSucceful] = useState(true); 
+  const [consultaCepIsSucceful, setConsultaCepIsSucceful] = useState(''); 
 
   //Constantes para endereço
   const [qtdEndereco, setQtdEndereco] = useState(1);
@@ -106,15 +106,21 @@ export default function Endereco(props) {
     }).then(
       (response) => {
         
-        if (response === undefined || response === '' || response === [] || response.data[0].error.code !== undefined || response.data[1].error.code !== undefined){
+        if (response === undefined || response === '' || response === [] || response.data[0].price === 0 || response.data[1].price === 0){
 
-          setConsultaCepIsSucceful(!consultaCepIsSucceful);
+          if (consultaCepIsSucceful === ''){
+            setConsultaCepIsSucceful(true);
+          } else {
+            setConsultaCepIsSucceful(!consultaCepIsSucceful);
+          }
+          
 
         } else {
 
           setSedex(response.data[0]);
           setPac(response.data[1]);
           setFreteLoading(false);
+          setConsultaCepIsSucceful('');
 
         }
       }
@@ -123,7 +129,9 @@ export default function Endereco(props) {
 
   //Sempre que a função de cnsulta cep for má sucedida, será executada novamente
   useEffect(()=>{
-    consultaCep();
+    if (consultaCepIsSucceful !== ''){
+      consultaCep();
+    }
   },[consultaCepIsSucceful]);
 
   useEffect(()=>{
