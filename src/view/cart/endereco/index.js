@@ -14,6 +14,11 @@ export default function Endereco(props) {
 
   //Mecanismo de abertura e fechamento do modal
   const [open, setOpen] = useState(false);
+
+  //Mecanismo para testar sucesso na função de CEP
+  const [consultaCepIsSucceful, setConsultaCepIsSucceful] = useState(true); 
+
+  //Constantes para endereço
   const [qtdEndereco, setQtdEndereco] = useState(1);
   const [endereco, setEndereco] = useState({
     rua: '',
@@ -22,7 +27,8 @@ export default function Endereco(props) {
     bairro: '',
     cep: '',
     cidade: '',
-    estado: ''
+    estado: '',
+    referencia: ''
   });
 
   //valores dos inputs
@@ -93,8 +99,34 @@ export default function Endereco(props) {
     }
   },[props.open]);
 
-  useEffect(()=>{
+  //Função de consulta o cep
+  function consultaCep(){
+    HttpAuth.post('frete', {
+      cep: cep
+    }).then(
+      (response) => {
+        
+        if (response === undefined || response === '' || response === [] || response.data[0].error.code !== undefined || response.data[1].error.code !== undefined){
 
+          setConsultaCepIsSucceful(!consultaCepIsSucceful);
+
+        } else {
+
+          setSedex(response.data[0]);
+          setPac(response.data[1]);
+          setFreteLoading(false);
+
+        }
+      }
+    );
+  }
+
+  //Sempre que a função de cnsulta cep for má sucedida, será executada novamente
+  useEffect(()=>{
+    consultaCep();
+  },[consultaCepIsSucceful]);
+
+  useEffect(()=>{
     setCepIsValid(undefined);
     setCepIsInvalid(undefined);
 
@@ -105,10 +137,19 @@ export default function Endereco(props) {
 
         setCepLoading(true);
         
-        Axios.get('https://viacep.com.br/ws/'+cep+'/json/unicode/').then(response => {
+        const linkCep = 'https://viacep.com.br/ws/'+cep+'/json/unicode/';
+
+        Axios.get(linkCep).then(response => {
           if(response.data.cep === undefined){
             setCepIsInvalid(true);
           } else {
+
+            //consulta o frete
+
+            setFreteLoading(true);
+
+            consultaCep();
+
             setCepIsValid(true);
             setEndereco({
               rua: response.data.logradouro,
@@ -151,27 +192,12 @@ export default function Endereco(props) {
               cidade: cidadeChecked,
               estado: estadoChecked
             });
-            
-            //consulta o frete
-            setFreteLoading(true);
-            HttpAuth.post('frete', {
-              cep: endereco.cep
-            }).then(
-              (response) => {
-                if (response === undefined || response === '' || response === []){
-                  //nada kk
-                } else {
-                  setSedex(response.data[0]);
-                  setPac(response.data[1]);
-                  setFreteLoading(false);
-                }
-              }
-            );
 
           }
 
           setCepLoading(false);
         })
+        
       }
     }
 
@@ -182,7 +208,7 @@ export default function Endereco(props) {
     HttpAuth.get('cliente/'+props.id+'/endereco').then(
       (response) => {
         
-        if (response.data.length > 0 || response.data !== undefined) {
+        if (typeof response.data.numero !== 'undefined') {
 
           setQtdEndereco(response.data.length);
 
@@ -242,7 +268,7 @@ export default function Endereco(props) {
         items: JSON.stringify(itemsIdQtd),
         endereco: JSON.stringify(endereco)
       };
-      
+
       HttpAuth.post('checkout', pedido).then(
         (response) => {
           window.location = response.data;
