@@ -58,18 +58,7 @@ export default function Welcome() {
   return (
     <>
       <Header />
-      
-      <Section3>
-        <BannerItems>
-        </BannerItems>
-      </Section3>
-      <Footer />
-    </>
-)}
-
-/*
-
-<Carousel className='carousel-dif'>
+      <Carousel className='carousel-dif' indicators={false}>
         <Carousel.Item>
           <Section1>
             <IMG
@@ -87,5 +76,10 @@ export default function Welcome() {
           </Section2>
         </Carousel.Item>
       </Carousel>
-
-*/
+      <Section3>
+        <BannerItems>
+        </BannerItems>
+      </Section3>
+      <Footer />
+    </>
+)}
