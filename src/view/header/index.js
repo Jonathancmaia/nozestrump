@@ -57,7 +57,7 @@ export default function Header() {
   );
   
   const Usuario = () => (
-    <OverlayTrigger trigger="focus" placement="bottom" overlay={popover}>
+    <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
       <Button className='loginButton botao'>Olá, {me.NAME}</Button>
     </OverlayTrigger>
   );

@@ -26,14 +26,6 @@ export default function Encomendas() {
     });
   },[]);
 
-  function consultaEncomenda(token){
-    Axios.get('https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/F894A664BE1046D683113BA08C85E14E?email=nozestrump@hotmail.com&token=5F8DE25C8AFC4260B29EB8AADA30A3A2').then( (response) => {
-      if (typeof response !== undefined || typeof response === ''){
-        return response.data;
-      }
-    });
-  }
-
   return (
     <>
       <ListGroup.Item action onClick={handleShow}>

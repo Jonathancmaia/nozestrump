@@ -22,3 +22,7 @@
 #logoNT{
   height: 8vh;
 }
+
+#popover-basic {
+  z-index: 50;
+}

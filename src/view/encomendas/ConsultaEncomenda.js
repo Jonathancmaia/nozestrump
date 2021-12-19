@@ -36,7 +36,7 @@ export default function ConsultaEncomenda(props) {
             setResponseToken('Cancelado');
             break;
         }
-
+        
         setLoading(false);
       }
     });
