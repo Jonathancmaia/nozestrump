@@ -37,6 +37,10 @@
   font-size: 1.6rem !important;
 }
 
+.numOfPages {
+  margin-bottom: 2vh;
+}
+
 h1 {
   color: #fff;
 }

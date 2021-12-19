@@ -162,17 +162,18 @@ export default function BannerItems(){
     preco: null
   });
 
-  //define o numero de itens carregados
+  //define o numero de itens carregados e sistema de paginação
   const [indexItens, setIndexItens] = useState(0);
   const [proximaPaginaButton, setProximaPaginaButton] = useState(false);
   const [paginaAnteriorButton, setPaginaAnteriorButton] = useState(false);
   const [qtdItens, setQtdItens] = useState(0);
   const [pgAtual, setPgAtual] = useState(1);
+  const [numPages, setNumPages] = useState(0);
 
   let itensShow = items.ITEMS.slice(indexItens, indexItens + 15);
 
   useEffect(()=>{
-    let numPages =  Math.ceil(qtdItens/15);
+    setNumPages(Math.ceil(qtdItens/15));
 
     if (pgAtual < numPages){
       setProximaPaginaButton(false);
@@ -347,6 +348,13 @@ export default function BannerItems(){
             >
               Próxima página
             </Button>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <center className='numOfPages'>
+              Página {pgAtual} de {numPages}
+            </center>
           </Col>
         </Row>
       </Container>
