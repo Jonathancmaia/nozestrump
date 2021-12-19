@@ -168,12 +168,14 @@ export default function BannerItems(){
   const [paginaAnteriorButton, setPaginaAnteriorButton] = useState(false);
   const [qtdItens, setQtdItens] = useState(0);
   const [pgAtual, setPgAtual] = useState(1);
-  const [numPages, setNumPages] = useState(0);
+  const [numOfPages, setNumOfPages] = useState('');
 
   let itensShow = items.ITEMS.slice(indexItens, indexItens + 15);
 
   useEffect(()=>{
-    setNumPages(Math.ceil(qtdItens/15));
+    
+    let numPages = Math.ceil(qtdItens/15);
+    setNumOfPages(numPages);
 
     if (pgAtual < numPages){
       setProximaPaginaButton(false);
@@ -353,7 +355,7 @@ export default function BannerItems(){
         <Row>
           <Col>
             <center className='numOfPages'>
-              Página {pgAtual} de {numPages}
+              Página {pgAtual} de {numOfPages}
             </center>
           </Col>
         </Row>
