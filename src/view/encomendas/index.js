@@ -21,6 +21,7 @@ export default function Encomendas() {
     HttpAuth.get('/encomenda').then( (response)=>{
       if (typeof response !== undefined || typeof response === ''){
         setPedidos(response.data);
+        
         setLoading(false);
       }
     });
