@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import { photo } from '../../store/actions/items.action';
-import { CircularProgress } from '@material-ui/core';
 import { style } from './style.css';
 
 export default function ShowPhotos(props){
@@ -20,17 +18,15 @@ export default function ShowPhotos(props){
     className={carouselType}
     >
     <img
-      className="d-block"
-      className={carouselType}
-      src={'http://nozestrump.com/api-lojabim.test'.concat([filtered.img])}
+      className={"d-block ".concat([carouselType])}
+      src={'http://nozestrump.ga/api-lojabim'.concat([filtered.img])}
       alt="First slide"
     />
   </Carousel.Item>);
 
   return (<>
     <Carousel
-      className='carousel'
-      className={carouselType}
+      className={"carousel ".concat([carouselType])}
       indicators={false}
       controls={false}
     >

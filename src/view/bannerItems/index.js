@@ -153,7 +153,7 @@ export default function BannerItems(){
     }
   }
 
-  // getModalStyle is not a pure function, we roll the style only on the first render
+  
   const [open, setOpen] = useState(false);
   const [item, setItem] = useState({ 
     id: null,
