@@ -19,7 +19,7 @@ export default function ShowPhotos(props){
     >
     <img
       className={"d-block ".concat([carouselType])}
-      src={'http://nozestrump.ga/api-lojabim'.concat([filtered.img])}
+      src={'https://nozestrump.ga/'.concat([filtered.img])}
       alt="First slide"
     />
   </Carousel.Item>);
