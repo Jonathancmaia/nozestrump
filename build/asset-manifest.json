@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.ee120627.css",
-    "main.js": "/static/js/main.0cec30de.js",
+    "main.js": "/static/js/main.6e01bc16.js",
     "static/css/993.52c05f49.chunk.css": "/static/css/993.52c05f49.chunk.css",
     "static/js/993.90f433c5.chunk.js": "/static/js/993.90f433c5.chunk.js",
     "static/css/916.12eea4c0.chunk.css": "/static/css/916.12eea4c0.chunk.css",
@@ -24,7 +24,7 @@
     "static/media/sleeveless-shirt.png": "/static/media/sleeveless-shirt.675093fb5dd53225cb1f.png",
     "index.html": "/index.html",
     "main.ee120627.css.map": "/static/css/main.ee120627.css.map",
-    "main.0cec30de.js.map": "/static/js/main.0cec30de.js.map",
+    "main.6e01bc16.js.map": "/static/js/main.6e01bc16.js.map",
     "993.52c05f49.chunk.css.map": "/static/css/993.52c05f49.chunk.css.map",
     "993.90f433c5.chunk.js.map": "/static/js/993.90f433c5.chunk.js.map",
     "916.12eea4c0.chunk.css.map": "/static/css/916.12eea4c0.chunk.css.map",
@@ -37,6 +37,6 @@
   },
   "entrypoints": [
     "static/css/main.ee120627.css",
-    "static/js/main.0cec30de.js"
+    "static/js/main.6e01bc16.js"
   ]
 }
