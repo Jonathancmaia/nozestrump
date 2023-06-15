@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.ee120627.css",
-    "main.js": "/static/js/main.be080048.js",
+    "main.js": "/static/js/main.1f5bce44.js",
     "static/css/993.52c05f49.chunk.css": "/static/css/993.52c05f49.chunk.css",
     "static/js/993.90f433c5.chunk.js": "/static/js/993.90f433c5.chunk.js",
     "static/css/916.12eea4c0.chunk.css": "/static/css/916.12eea4c0.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/744.3bc9c713.chunk.js": "/static/js/744.3bc9c713.chunk.js",
     "static/js/645.92ed99fa.chunk.js": "/static/js/645.92ed99fa.chunk.js",
     "static/js/323.edb71969.chunk.js": "/static/js/323.edb71969.chunk.js",
-    "static/js/258.0f0b9fd6.chunk.js": "/static/js/258.0f0b9fd6.chunk.js",
+    "static/js/258.051145f1.chunk.js": "/static/js/258.051145f1.chunk.js",
     "static/media/capa02.jpg": "/static/media/capa02.c0f02fc501218bc540ac.jpg",
     "static/media/capa03.jpg": "/static/media/capa03.ce2f425ce171bd5496fb.jpg",
     "static/media/Teko-Bold.ttf": "/static/media/Teko-Bold.ff817333802ca240623c.ttf",
@@ -24,7 +24,7 @@
     "static/media/sleeveless-shirt.png": "/static/media/sleeveless-shirt.675093fb5dd53225cb1f.png",
     "index.html": "/index.html",
     "main.ee120627.css.map": "/static/css/main.ee120627.css.map",
-    "main.be080048.js.map": "/static/js/main.be080048.js.map",
+    "main.1f5bce44.js.map": "/static/js/main.1f5bce44.js.map",
     "993.52c05f49.chunk.css.map": "/static/css/993.52c05f49.chunk.css.map",
     "993.90f433c5.chunk.js.map": "/static/js/993.90f433c5.chunk.js.map",
     "916.12eea4c0.chunk.css.map": "/static/css/916.12eea4c0.chunk.css.map",
@@ -33,10 +33,10 @@
     "744.3bc9c713.chunk.js.map": "/static/js/744.3bc9c713.chunk.js.map",
     "645.92ed99fa.chunk.js.map": "/static/js/645.92ed99fa.chunk.js.map",
     "323.edb71969.chunk.js.map": "/static/js/323.edb71969.chunk.js.map",
-    "258.0f0b9fd6.chunk.js.map": "/static/js/258.0f0b9fd6.chunk.js.map"
+    "258.051145f1.chunk.js.map": "/static/js/258.051145f1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ee120627.css",
-    "static/js/main.be080048.js"
+    "static/js/main.1f5bce44.js"
   ]
 }
